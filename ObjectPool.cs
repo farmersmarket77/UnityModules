@@ -56,7 +56,6 @@ public class ObjectPool : MonoBehaviour
             var obj = instance.targetObjectQueue.Dequeue();
             obj.transform.SetParent(null);
             obj.gameObject.SetActive(true);
-            obj.GetComponent<ObjectScript>().InitBullet();
             return obj;
         }
         // 풀에 여분이 없을때 새로운 오브젝트 생성
@@ -64,7 +63,6 @@ public class ObjectPool : MonoBehaviour
         {
             var newObj = instance.CreateNewObject();
             newObj.gameObject.SetActive(true);
-            newObj.GetComponent<ObjectScript>().InitBullet();
             newObj.transform.SetParent(null);
             return newObj;
         }
