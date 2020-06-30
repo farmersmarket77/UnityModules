@@ -35,12 +35,12 @@ public class ObjectPool : MonoBehaviour
     {
         for (int i = 0; i < _initCount; i++)
         {
-            taretObjectQueue.Enqueue(CreateNew());
+            targetObjectQueue.Enqueue(CreateNew());
         }
     }
 
     // 오브젝트 생성
-    private ObjectScript CreateNew()
+    private ObjectScript CreateNewObject()
     {
         var newObj = Instantiate(targetObject).GetComponent<ObjectScript>();
         newObj.gameObject.SetActive(false);
@@ -62,7 +62,7 @@ public class ObjectPool : MonoBehaviour
         // 풀에 여분이 없을때 새로운 오브젝트 생성
         else
         {
-            var newObj = instance.CreateNewBullet();
+            var newObj = instance.CreateNewObject();
             newObj.gameObject.SetActive(true);
             newObj.GetComponent<ObjectScript>().InitBullet();
             newObj.transform.SetParent(null);
