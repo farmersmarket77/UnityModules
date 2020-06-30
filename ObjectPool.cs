@@ -1,3 +1,13 @@
+/*
+
+    targetObject -> 오브젝트풀링에 사용될 오브젝트
+    ObjectScript -> targetObject에 있는 스크립트
+    
+    ObjectPool.GetObject()로 풀에서 꺼냄
+    ObjectPool.ReturnObject(this)로 풀에 반납
+
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
